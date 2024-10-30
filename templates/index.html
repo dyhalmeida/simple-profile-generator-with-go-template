@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Profile Generator With Go Template</title>
+</head>
+<body>
+    <h1>Profile list</h1>
+    <ul>
+        {{range .}}
+        <li>
+            <strong>{{.Name}}</strong>, {{.Age}} years old
+            <br>
+            <p>
+                {{.Bio | ToUppercase}}
+            </p>
+        </li>
+            {{ if .Name }}
+                <hr>
+            {{end}}
+        {{end}}
+    </ul>
+    <br>
+    <a href="/new">Go to create a new profile</a>
+</body>
+</html>

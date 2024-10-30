@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    image: docker.io/dyhalmeida/simple-profile-generator
+    container_name: simple-profile-generator
+    environment:
+      - CGO_ENABLED=0
+      - GOOS=linux
+    ports:
+      - "3333:3333"
